@@ -38,23 +38,23 @@ if($_SESSION['status']==1){
 <div class="row my-5">
     <div class="col-md-7">
         <?php
-  if(isset($_SESSION['groups'])){
-    $groups=$_SESSION['groups'];
-    for($i=0;$i<count($groups);$i++){
+  if(isset($_SESSION['candidates'])){
+    $candidates=$_SESSION['candidates'];
+    for($i=0;$i<count($candidates);$i++){
         ?>
         <div class="row">
         <div class="col-md-4">
-            <img src="../uploads/<?php echo $groups[$i]['photo']  ?>" alt="Group Image">
+            <img src="../uploads/<?php echo $candidates[$i]['photo']  ?>" alt="Candidate Image">
         </div>
         <div class="col-md-8">
-            <strong class="text-dark h5">Group name:</strong><?php echo $groups[$i]['username']  ?><br>
-            <strong class="text-dark h5">Votes:</strong><?php echo $groups[$i]['votes']  ?><br>
+            <strong class="text-dark h5">Candidate name:</strong><?php echo $candidates[$i]['username']  ?><br>
+            <strong class="text-dark h5">Votes:</strong><?php echo $candidates[$i]['votes']  ?><br>
         </div>
     </div>
   
     <form action="../actions/voting.php" method="POST">
-<input type="hidden" name="groupvotes" value="<?php echo $groups[$i]['votes']  ?>">
-<input type="hidden" name="groupid" value="<?php echo $groups[$i]['id']  ?>">
+<input type="hidden" name="candidatevotes" value="<?php echo $candidates[$i]['votes']  ?>">
+<input type="hidden" name="candidateid" value="<?php echo $candidates[$i]['id']  ?>">
 
 <?php
 if($_SESSION['status']==1){
@@ -79,7 +79,7 @@ if($_SESSION['status']==1){
     <?php
   }
     ?>
-        <! -- groups -->
+        <! -- candidates -->
     </div>
     <div class="col-md-5">
         <! -- user profile -->

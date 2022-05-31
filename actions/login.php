@@ -11,11 +11,11 @@ $sql="Select * from `userdata` where username='$username' and mobile='$mobile'
 and password='$password' and standard='$std'";
 $result=mysqli_query($con,$sql);
 if(mysqli_num_rows($result)>0){
-    $sql="Select username,photo,votes,id from `userdata` where standard='group'";
-    $resultgroup=mysqli_query($con,$sql);
-    if(mysqli_num_rows($resultgroup)>0){
-        $groups=mysqli_fetch_all($resultgroup,MYSQLI_ASSOC);
-        $_SESSION['groups']=$groups;
+    $sql="Select username,photo,votes,id from `userdata` where standard='candidate'";
+    $resultcandidate=mysqli_query($con,$sql);
+    if(mysqli_num_rows($resultcandidate)>0){
+        $candidates=mysqli_fetch_all($resultcandidate,MYSQLI_ASSOC);
+        $_SESSION['candidates']=$candidates;
     }
     $datadata=mysqli_fetch_array($result);
     $_SESSION['id']=$data['id'];
